@@ -1,27 +1,23 @@
 <ul class="meals">
     <li class="meal" ng-repeat="meal in menu.meals">
-        <!-- <img class="image" ng-src="{{meal.primaryImageUrl}}">
-        <h4 class="name">{{meal.name}}</h4>
-          <p class="price"><b><em>{{meal.price}}</em><b></p> -->
 
-            <div class="image" ng-style="{ 'background-image': 'url(' + meal.primaryImageUrl + ')'}">
-
-              <p class="price"><b><em>{{meal.price | currency: "&pound;"}}</em><b></p>
-                <h4 class="name">{{meal.name}}</h4>
+        <div class="image" ng-style="{ 'background-image': 'url(' + meal.primaryImageUrl + ')'}">
+          <p class="price"><b><em>{{meal.price | currency: "&pound;"}}</em><b></p>
+              <!-- <img class="curve" src="images/test-slice1.svg" /> -->
+            <h4 class="name">{{meal.name}}</h4>
+              <div class="tags">
+                <div class="tag" ng-repeat="tag in meal.tags">
+                  {{ meal.tags }}
+                </div>
               </div>
-
-
-
+        </div>
 
         <div class="menu-item-info">
-        <p class="description">{{meal.description}}</p>
-        <div class="button-container">
-        <button class="button-add-item"><em>Add To Your Order</em></button>
+          <p class="description">{{meal.description}}</p>
+          <div class="button-container">
+           <button class="button-add-item" ng-click"addToBasket(item)"><em>Add To Your Order</em></button>
+          </div>
         </div>
 
-
-
-        <!-- <img class="curve" src="images/meal-card__curve.svg" /> -->
-        </div>
     </li>
 </ul>
