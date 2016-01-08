@@ -1,27 +1,30 @@
-'use strict';
+(function () {
+    'use strict';
 
-/**
- * @ngdoc service
- * @name jstestApp.Menuservice
- * @description
- * # MenuService
- * Service in the jstestApp.
- */
-angular.module('jstestApp').factory('BasketService', function () {
+		angular.module('jstestApp').factory('BasketService', function () {
 
-	var basket = [];
+		  var basket = [];
 
-  return {
+		  return {
 
-		basket: basket,
+				basket: basket,
 
-		addToBasket: function(item) {
-			basket.push(item);
-      console.log('Item added to basket');
-		}
+				addToBasket: function(item) {
+					basket.push(item);
+		      console.log('add to basket function triggered');
+				},
 
-  };
-		// function get () {
-		// 	return $http.get('/data/menu.json');
-		// }
-	});
+				removeFromBasket: function(item) {
+				  basket.delete(item);
+					console.log('Remove from Basket function triggered');
+				},
+
+				basketPrice: function() {
+					//Add up all meal.price's in the basket
+					console.log('basket price function triggered');
+				}
+
+		  };
+
+		});
+}());
