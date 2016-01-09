@@ -9,13 +9,16 @@
 
 				basket: basket,
 
-				addToBasket: function(item) {
-					basket.push(item);
-		      console.log('add to basket function triggered');
+				addToBasket: function(meal, price) {
+					basket.push(meal, price);
+		      console.log( meal);
+            console.log(basket);
+          // return basket;
+
 				},
 
-				removeFromBasket: function(item) {
-				  basket.delete(item);
+				removeFromBasket: function(meal, price) {
+				  basket.delete(meal, price);
 					console.log('Remove from Basket function triggered');
 				},
 

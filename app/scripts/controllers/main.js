@@ -10,9 +10,8 @@
 
             self.menu = {};
 
-            // self.addToBasket = function () {
-            //   console.log('Hey look I work');
-            // };
+            self.basket = {};
+
 
             MenuService.get('/data/menu.json').success(function (data) {
                 $scope.menu = data;
@@ -23,4 +22,5 @@
             self.removeFromBasket = BasketService.removeFromBasket;
         }
             ]);
+
 }());
