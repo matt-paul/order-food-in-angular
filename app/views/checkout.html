@@ -1,0 +1,20 @@
+  <div class="header checkout">
+
+    <div class="basket-ordered">
+      <div class="basket-ordered-items header-border header-text" ng-repeat="item in ctrl.basket track by $index">
+        <div class="basket-meal-name basket-text">
+          {{ item }}
+        </div>
+        <div class="basket-meal-price basket-text">
+          {{ item | currency: "&pound;"}}
+        </div>
+      </div>
+    </div>
+    <a href="/">
+      <button class="header-confirm-button header-border" ng-click="ctrl.confirmOrder()">
+          <em><b>Confirm Your Order</b></em>
+      </button></a>
+      <button class="header-total-price header-small-box header-border">
+        <b> {{ ctrl.totalCost | currency: "&pound;"}} </b>
+    </button>
+  </div>

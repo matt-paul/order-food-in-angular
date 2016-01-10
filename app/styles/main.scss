@@ -30,32 +30,20 @@ ul {
   min-height: 2.5em;
 }
 
-.header.ng-enter {
-    background-color: $header-red-main;
-  transition:0.5s linear all;
-    min-height: 2.5em;
-  // min-height: 2.5em;
-}
-.header.ng-enter.ng-enter-active {
-    background-color: $header-red-main;
-  transition:0.5s linear all;
-  min-height: 7.5em;
-}
-
-
-.header-text {
-  color: $white;
-  padding: .3em;
-  margin: auto;
-  background: $header-red-inner;
-  text-align: center;
-}
-
 .header-border {
   border: 2px solid;
   border-color: $header-red-border;
-
 }
+
+.header-text {
+  background: $header-red-inner;
+  color: $white;
+  padding: .3em;
+  margin: auto;
+  text-align: center;
+}
+
+
 .header-small-box {
   background: $header-red-inner;
   color: $header-text-dark;
@@ -84,6 +72,38 @@ ul {
   color: $white;
 }
 
+
+// Basket
+
+.basket-ordered {
+  padding: .7em;
+}
+
+.basket-ordered-items {
+  font-size: 1em;
+  color: $white;
+  width: 90%;
+  height: 2em;
+  margin: 1em;
+}
+
+.basket-text {
+  font-size: 1.3em;
+  color: $checkout-text-pink;
+  padding: .3em;
+  margin: auto;
+}
+
+.basket-meal-name {
+  width: 60%;
+  float: left;
+  text-align: left;
+}
+
+.basket-meal-price {
+  width: 30%;
+  float: right;
+}
 #welcome {
   padding: .2em;
   margin-left: .3em;

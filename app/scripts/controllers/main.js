@@ -3,13 +3,17 @@
 
     angular
         .module('jstestApp')
-        .controller('MainCtrl', ['$scope', 'MenuService', 'BasketService', function ($scope, MenuService, BasketService) {
+        .controller('MainCtrl', ['$scope', '$location', '$routeParams', 'MenuService', 'BasketService', function ($scope, $location, $routeParms, MenuService, BasketService) {
 
             var self = this;
 
             self.menu = {};
 
-            self.basket = {};
+            self.showCheckout = function (pathurl) {
+              $location.path(pathurl);
+            };
+
+            self.basket = BasketService.basket;
 
             self.total = BasketService.total;
 

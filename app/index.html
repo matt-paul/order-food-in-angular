@@ -29,25 +29,11 @@
           <div class="header-main-count header-small-box header-border">
             <em><b>{{ ctrl.num }}main</b></em>
           </div>
-            <button class="header-total-price header-small-box header-border" ng-click="bool=true">
+            <button class="header-total-price header-small-box header-border" ng-click="ctrl.showCheckout('/checkout')">
               <b> {{ ctrl.totalCost | currency: "&pound;"}} </b>
           </button>
       </div>
       </div>
-
-
-
-      <!--Working on checkout-->
-
-        <div class="header">
-            <button class="header-confirm-button header-border" ng-click="">
-                <em><b>Confirm Your Order</b></em>
-            </button>
-            <button class="header-total-price header-small-box header-border">
-              <b> {{ ctrl.totalCost | currency: "&pound;"}} </b>
-          </button>
-        </div>
-
 
 
       <!-- <p ng-show="ctrl.itemsInBasket()">{{ctrl.total}}</p> -->

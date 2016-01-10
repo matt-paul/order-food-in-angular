@@ -32,12 +32,15 @@
           total.push(p);
           this.calculateTotal();
           this.numberOfItems();
+          console.log(basket);
+          console.log(meal)
 				},
 
 
         confirmOrder: function () {
            basket.length = 0;
            this.basket = basket;
+           console.log(basket);
 
         },
 
