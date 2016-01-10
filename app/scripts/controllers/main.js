@@ -29,7 +29,6 @@
 
             self.numberOfItems = BasketService.numberOfItems;
 
-            // self.num = BasketService.num;
 
         }
             ]);

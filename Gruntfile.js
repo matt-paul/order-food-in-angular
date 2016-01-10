@@ -176,6 +176,19 @@ module.exports = function (grunt) {
       }
     },
 
+    babel: {
+       options: {
+           sourceMap: true,
+           presets: ['es2015']
+       },
+       dist: {
+           files: {
+               'dist/app.js': 'src/app.js',
+               'app/scripts/**/*.js': 'dist/'
+           }
+       }
+   },
+
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
@@ -440,6 +453,10 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin'
+  ]);
+
+  grunt.registerTask('default', [
+    'babel'
   ]);
 
   grunt.registerTask('default', [

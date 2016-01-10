@@ -24,7 +24,7 @@
             });
 
             it ('the basket total price should be zero', function () {
-              expect(BasketService.total).toEqual(0);
+              expect(BasketService.totalCost).toEqual(0);
             });
 
         });
@@ -43,14 +43,36 @@
                 expect(BasketService.basket).toEqual(myOrder);
             });
 
-            it('should calculate correct price of basket', function () {
-                // ctrl.calculateTotal();
-                expect(BasketService.calculateTotal()).toEqual(8.98);
+            it('should correctly identify the number of items ordered', function () {
+                expect(BasketService.total.length).toEqual(2);
             });
 
-            it('should trigger the calculate total function', function () {
-              expect(BasketService.calculateTotal).toHaveBeenCalled();
+            it('should calculate correct price of basket', function () {
+                expect(ctrl.totalCost).toEqual(8.98);
             });
+
+
+
+            // describe('addToBasket function', function () {
+            //
+            //   // create spy to check that functions are called within add to Basket.
+            //   beforeEach(function() {
+            //     var
+            //     BasketService = {
+            //       fakeCalculateTotal: //add function
+            //     };
+            //   });
+            //
+            //     it('add to basket function should trigger the calculate total function', function () {
+            //       expect(BasketService.fakeCalculateTotal).toHaveBeenCalled();
+            //     });
+            //
+            //     it('add to basket function should trigger the numberOfItems function', function () {
+            //       //expect
+            //     });
+            //
+            // });
+
 
         });
 

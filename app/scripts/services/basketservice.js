@@ -41,10 +41,22 @@
 
 
         calculateTotal: function () {
-          var totalCost = total.reduce((a,b) => a + b, 0);
+          var totalCost = total.reduce(add, 0);
+            function add(a,b) {
+              return a+b;
+            }
+
           this.totalCost = totalCost;
           console.log(total);
         },
+
+
+
+        // calculateTotal: function () {
+        //   var totalCost = total.reduce((a,b) => a + b, 0);
+        //   this.totalCost = totalCost;
+        //   console.log(total);
+        // },
 
         numberOfItems: function () {
           var num = total.length;
