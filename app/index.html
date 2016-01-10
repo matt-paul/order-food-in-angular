@@ -21,10 +21,21 @@
 
     <!-- Add your site or application content here -->
     <div class="container" ng-controller="MainCtrl as ctrl">
-      <div class="header">
+      <div ng-if="!bool" class="header fade">
         <!-- <h3 class="text-muted"></h3> -->
-        <p class="header-text">It's time to order some delicious food</p>
+        <p class="header-text" ng-hide="ctrl.orderUnderway()">It's time to order some delicious food</p>
+
+        <div class="header-basket-items" ng-show="ctrl.orderUnderway()">
+          <div class="header-main-count header-small-box">
+            <em><b>{{ ctrl.num }}main</b></em>
+          </div>
+            <button class="header-total-price header-small-box" ng-click="bool=true">
+              <b> {{ ctrl.totalCost | currency: "&pound;"}} </b>
+          </button>
       </div>
+      </div>
+
+      <!-- <p ng-show="ctrl.itemsInBasket()">{{ctrl.total}}</p> -->
 
       <div ng-view=""></div>
 

@@ -1,33 +1,59 @@
 (function () {
     'use strict';
 
-		angular.module('jstestApp').factory('BasketService', function () {
+    angular.module('jstestApp').factory('BasketService', function () {
 
 		  var basket = [];
+
+      var total = [];
+
+      var totalCost = 0;
+
+      var num = 0;
 
 		  return {
 
 				basket: basket,
 
-				addToBasket: function(meal, price) {
+        total: total,
+
+        totalCost: totalCost,
+
+        num: num,
+
+        orderUnderway: function () {
+            return basket.length > 0 ? true : false;
+        },
+
+
+				addToBasket: function (meal, price) {
 					basket.push(meal, price);
-		      console.log( meal);
-            console.log(basket);
-          // return basket;
-
+          var p = parseFloat(price);
+          total.push(p);
+          this.calculateTotal();
+          this.numberOfItems();
 				},
 
-				removeFromBasket: function(meal, price) {
-				  basket.delete(meal, price);
-					console.log('Remove from Basket function triggered');
-				},
 
-				basketPrice: function() {
-					//Add up all meal.price's in the basket
-					console.log('basket price function triggered');
-				}
+        confirmOrder: function () {
+           basket = [];
+        },
+
+
+        calculateTotal: function () {
+          var totalCost = total.reduce((a,b) => a + b, 0);
+          this.totalCost = totalCost;
+          console.log(total);
+        },
+
+        numberOfItems: function () {
+          var num = total.length;
+          this.num = num;
+        }
+
 
 		  };
 
 		});
+
 }());

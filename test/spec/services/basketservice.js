@@ -5,13 +5,10 @@
 
         beforeEach(module('jstestApp'));
 
-      // instantiate service
         var BasketService, ctrl, scope;
 
         beforeEach(inject(function ($injector, $controller) {
-            // $httpBackend = $injector.get('$httpBackend');
             BasketService = $injector.get('BasketService');
-            // basket = [];
             ctrl = $controller('MainCtrl', { $scope: scope});
         }));
 
@@ -19,32 +16,58 @@
             expect(!!BasketService).toBe(true);
         });
 
+
         describe('on initialisation', function () {
 
-
-            it('should be an array with zero items inside it', function () {
+            it('basket should be an array with zero items inside it', function () {
                 expect(BasketService.basket).toEqual([]);
             });
 
+            it ('the basket total price should be zero', function () {
+              expect(BasketService.total).toEqual(0);
+            });
+
         });
+
 
         describe('Adding Items', function () {
 
+          var myOrder = ['Tasty Falafel', 3.99, 'Paneer Tikka', 4.99];
 
-            it('meal should be added into the basket', function () {
+            beforeEach(function () {
                 ctrl.addToBasket('Tasty Falafel', 3.99);
-                expect(BasketService.basket).toEqual(['Tasty Falafel', 3.99]);
+                ctrl.addToBasket('Paneer Tikka', 4.99);
             });
 
+            it('should update the contents of the basket', function () {
+                expect(BasketService.basket).toEqual(myOrder);
+            });
 
+            it('should calculate correct price of basket', function () {
+                // ctrl.calculateTotal();
+                expect(BasketService.calculateTotal()).toEqual(8.98);
+            });
+
+            it('should trigger the calculate total function', function () {
+              expect(BasketService.calculateTotal).toHaveBeenCalled();
+            });
 
         });
 
+        describe('Removing Items', function () {
 
-      //xit('should add an item into the basket', function () {
-        //add item to basket
-        //expect basket to have one item in it
-      //});
+          beforeEach(function () {
+            ctrl.addToBasket('Mango Lassi', 1.99);
+          });
+
+          // it('should remove item from basket', function () {
+          //   ctrl.removeFromBasket();
+          //   expect(BasketService.basket).toEqual([]);
+          //   expect(BasketService.total).toEqual(0);
+          // });
+
+
+        });
 
     });
 }());

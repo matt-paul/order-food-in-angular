@@ -1,4 +1,5 @@
 <ul class="meals">
+  <h3>Your Delicious Restaurant</h1>
     <li class="meal" ng-repeat="meal in menu.meals">
 
         <div class="image" ng-style="{ 'background-image': 'url(' + meal.primaryImageUrl + ')'}">
@@ -6,9 +7,9 @@
               <!-- <img class="curve" src="images/test-slice1.svg" /> -->
             <h4 class="name">{{meal.name}}</h4>
               <div class="tags">
-                <div class="tag" ng-repeat="tag in meal.tags">
+                <!-- <div class="tag" ng-repeat="tag in meal.tags">
                   {{ meal.tags }}
-                </div>
+                </div> -->
               </div>
         </div>
 
