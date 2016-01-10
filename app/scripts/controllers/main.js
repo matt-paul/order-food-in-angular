@@ -29,6 +29,8 @@
 
             self.numberOfItems = BasketService.numberOfItems;
 
+            self.confirmOrder = BasketService.confirmOrder;
+
 
         }
             ]);

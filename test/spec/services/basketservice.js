@@ -26,7 +26,6 @@
             it ('the basket total price should be zero', function () {
               expect(BasketService.totalCost).toEqual(0);
             });
-
         });
 
 
@@ -51,8 +50,6 @@
                 expect(ctrl.totalCost).toEqual(8.98);
             });
 
-
-
             // describe('addToBasket function', function () {
             //
             //   // create spy to check that functions are called within add to Basket.
@@ -72,9 +69,8 @@
             //     });
             //
             // });
+          });
 
-
-        });
 
         describe('Removing Items', function () {
 
@@ -88,7 +84,15 @@
           //   expect(BasketService.total).toEqual(0);
           // });
 
+        });
 
+        describe('confirming order', function () {
+
+          it('should remove all items from the basket', function () {
+            ctrl.addToBasket('Mango Lassi', 1.99);
+            ctrl.confirmOrder();
+            expect(BasketService.basket.length).toBe(0);
+          });
         });
 
     });

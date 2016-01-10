@@ -8,6 +8,7 @@
             'ngResource',
             'ngRoute',
             'ngSanitize',
+            'truncate',
             'ngTouch'
         ])
         .config(function ($routeProvider) {

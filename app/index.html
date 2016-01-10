@@ -21,19 +21,34 @@
 
     <!-- Add your site or application content here -->
     <div class="container" ng-controller="MainCtrl as ctrl">
-      <div ng-if="!bool" class="header fade">
+      <div ng-if="!bool" class="header">
         <!-- <h3 class="text-muted"></h3> -->
-        <p class="header-text" ng-hide="ctrl.orderUnderway()">It's time to order some delicious food</p>
+        <p class="header-text header-border" ng-hide="ctrl.orderUnderway()">It's time to order some delicious food</p>
 
         <div class="header-basket-items" ng-show="ctrl.orderUnderway()">
-          <div class="header-main-count header-small-box">
+          <div class="header-main-count header-small-box header-border">
             <em><b>{{ ctrl.num }}main</b></em>
           </div>
-            <button class="header-total-price header-small-box" ng-click="bool=true">
+            <button class="header-total-price header-small-box header-border" ng-click="bool=true">
               <b> {{ ctrl.totalCost | currency: "&pound;"}} </b>
           </button>
       </div>
       </div>
+
+
+
+      <!--Working on checkout-->
+
+        <div class="header">
+            <button class="header-confirm-button header-border" ng-click="">
+                <em><b>Confirm Your Order</b></em>
+            </button>
+            <button class="header-total-price header-small-box header-border">
+              <b> {{ ctrl.totalCost | currency: "&pound;"}} </b>
+          </button>
+        </div>
+
+
 
       <!-- <p ng-show="ctrl.itemsInBasket()">{{ctrl.total}}</p> -->
 
@@ -68,6 +83,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/menuservice.js"></script>
         <script src="scripts/services/basketservice.js"></script>
+        <script src="scripts/truncate.js"></script>
 
         <!-- endbuild -->
 </body>

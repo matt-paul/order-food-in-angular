@@ -9,7 +9,7 @@
 
       var totalCost = 0;
 
-      var num = 0;
+      // var num = 0;
 
 		  return {
 
@@ -19,7 +19,7 @@
 
         totalCost: totalCost,
 
-        num: num,
+        // num: num,
 
         orderUnderway: function () {
             return basket.length > 0 ? true : false;
@@ -36,7 +36,9 @@
 
 
         confirmOrder: function () {
-           basket = [];
+           basket.length = 0;
+           this.basket = basket;
+
         },
 
 
@@ -45,18 +47,9 @@
             function add(a,b) {
               return a+b;
             }
-
           this.totalCost = totalCost;
-          console.log(total);
         },
 
-
-
-        // calculateTotal: function () {
-        //   var totalCost = total.reduce((a,b) => a + b, 0);
-        //   this.totalCost = totalCost;
-        //   console.log(total);
-        // },
 
         numberOfItems: function () {
           var num = total.length;
