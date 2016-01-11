@@ -6,17 +6,18 @@
           <p class="price"><b><em>{{meal.price | currency: "&pound;"}}</em><b></p>
               <!-- <img class="curve" src="images/test-slice1.svg" /> -->
             <h4 class="name">{{meal.name}}</h4>
-              <div class="tags">
+              <!-- <div class="tags">
                 <div class="tag" ng-repeat="tag in meal.tags">
                   {{ tag }}
-                </div>
+                </div> -->
               </div>
         </div>
 
         <div class="menu-item-info">
-          <p class="description" ng-model="letterLimit"> {{meal.description | words:10: true }}</p>
+          <p class="description" ng-model="letterLimit"> {{meal.description | words:15: true }}</p>
           <div class="button-container">
-           <button class="button-add-item" ng-click="ctrl.addToBasket(meal.name, meal.price)"><em>Add To Your Order</em></button>
+           <button class="button-add-item" ng-click="ctrl.addToBasket(meal, meal.price)"><em>Add To Your Order</em></button>
+           <p class="option-text">3 options available</p>
           </div>
         </div>
 

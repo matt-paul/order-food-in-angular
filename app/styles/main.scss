@@ -83,31 +83,33 @@ ul {
   font-size: 1em;
   color: $white;
   width: 90%;
-  height: 2em;
+  min-height: 2em;
   margin: 1em;
 }
 
 .basket-text {
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: $checkout-text-pink;
   padding: .3em;
   margin: auto;
-}
-
-.basket-meal-name {
-  width: 60%;
-  float: left;
   text-align: left;
 }
 
+.basket-meal-name {
+  width: 80%;
+  float: left;
+}
+
 .basket-meal-price {
-  width: 30%;
+  width: 15%;
   float: right;
 }
+
 #welcome {
   padding: .2em;
   margin-left: .3em;
 }
+
 // Menu Items
 
 .meal {
@@ -136,7 +138,6 @@ ul {
 
 .description {
   padding: 5%;
-  // text-overflow: ellipsis; //implement if time
 }
 
 .button-container {
@@ -157,12 +158,21 @@ ul {
 }
 .button-add-item {
   height: 2em;
-  width: 70%;
+  width: 90%;
   color: white;
   background-color: $yay-blue;
-  padding: .3em .8em;
-  margin-bottom: 1em;
+  padding: .3em .6em;
+  margin-bottom: .5em;
   font-size: 1.1em;
+}
+
+.option-text {
+  // width: 90%;
+  font-size: .5em;
+  color: #C7CBD3;
+  text-align: left;
+  margin: .5em;
+  padding-left: 1em;
 }
 
 .curve {

@@ -19,21 +19,17 @@
 
         totalCost: totalCost,
 
-        // num: num,
-
         orderUnderway: function () {
             return basket.length > 0 ? true : false;
         },
 
 
 				addToBasket: function (meal, price) {
-					basket.push(meal, price);
+					basket.push(meal);
           var p = parseFloat(price);
           total.push(p);
           this.calculateTotal();
           this.numberOfItems();
-          console.log(basket);
-          console.log(meal)
 				},
 
 
