@@ -3,13 +3,14 @@
     <div class="basket-ordered">
       <div class="basket-ordered-items header-border header-text" ng-repeat="meal in ctrl.basket track by $index">
         <div class="basket-meal-name">
-        <p class="basket-text">  {{ meal.name }}</p>
+          <p class="basket-text">  {{ meal.name }}</p>
         </div>
         <div class="basket-meal-price basket-text">
           {{ meal.price | currency: "&pound;"}}
         </div>
       </div>
     </div>
+
     <a href="/">
       <button class="header-confirm-button header-border" ng-click="ctrl.confirmOrder()">
           <em><b>Confirm Your Order</b></em>

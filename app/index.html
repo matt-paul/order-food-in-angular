@@ -27,16 +27,14 @@
 
         <div class="header-basket-items" ng-show="ctrl.orderUnderway()">
           <div class="header-main-count header-small-box header-border">
-            <em><b>{{ ctrl.num }}main</b></em>
+             <em><b>{{ ctrl.num }}main</b></em>
           </div>
             <button class="header-total-price header-small-box header-border" ng-click="ctrl.showCheckout('/checkout')">
               <b> {{ ctrl.totalCost | currency: "&pound;"}} </b>
-          </button>
-      </div>
+            </button>
+        </div>
       </div>
 
-
-      <!-- <p ng-show="ctrl.itemsInBasket()">{{ctrl.total}}</p> -->
 
       <div ng-view=""></div>
 

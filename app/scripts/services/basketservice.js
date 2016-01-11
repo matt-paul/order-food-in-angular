@@ -9,8 +9,6 @@
 
       var totalCost = 0;
 
-      // var num = 0;
-
 		  return {
 
 				basket: basket,
@@ -36,8 +34,6 @@
         confirmOrder: function () {
            basket.length = 0;
            this.basket = basket;
-           console.log(basket);
-
         },
 
 

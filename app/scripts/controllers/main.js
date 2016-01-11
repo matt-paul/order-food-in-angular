@@ -7,11 +7,16 @@
 
             var self = this;
 
+            var hideHeader = false;
+
             self.menu = {};
+
 
             self.showCheckout = function (pathurl) {
               $location.path(pathurl);
+              hideHeader = true;
             };
+
 
             self.basket = BasketService.basket;
 
