@@ -5,28 +5,24 @@
         .module('jstestApp')
         .controller('MainCtrl', ['$scope', '$location', '$routeParams', 'MenuService', 'BasketService', function ($scope, $location, $routeParms, MenuService, BasketService) {
 
-            var self = this;
-
-            var hideHeader = false;
+            var self = this, hideHeader = false;
 
             self.menu = {};
 
-
             self.showCheckout = function (pathurl) {
               $location.path(pathurl);
-              hideHeader = true;
+                hideHeader = true;
             };
 
+            MenuService.get('/data/menu.json').success(function (data) {
+                $scope.menu = data;
+            });
 
             self.basket = BasketService.basket;
 
             self.total = BasketService.total;
 
             self.totalCost = BasketService.totalCost;
-
-            MenuService.get('/data/menu.json').success(function (data) {
-                $scope.menu = data;
-            });
 
             self.addToBasket = BasketService.addToBasket;
 
